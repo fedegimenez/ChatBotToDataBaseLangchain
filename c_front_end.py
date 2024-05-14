@@ -1,4 +1,4 @@
-#lanzar con streamlit run c_front_end.py en el terminal
+#To run the code you will need to install all the dependencies of the project and write streamlit run c_front_end.py in a terminal
 
 import b_backend
 import streamlit as st
@@ -20,7 +20,7 @@ def click():
         st.session_state.preguntas.append(pregunta)
         st.session_state.respuestas.append(respuesta)
 
-        # Limpiar el input de usuario después de enviar la pregunta
+        # Clean the user input
         st.session_state.user = ''
 
 
@@ -32,7 +32,7 @@ if st.session_state.preguntas:
     for i in range(len(st.session_state.respuestas)-1, -1, -1):
         message(st.session_state.respuestas[i], key=str(i))
 
-    # Opción para continuar la conversación
+    # Option to continue the conversation
     continuar_conversacion = st.checkbox('Quieres hacer otra pregunta?')
     if not continuar_conversacion:
         st.session_state.preguntas = []
